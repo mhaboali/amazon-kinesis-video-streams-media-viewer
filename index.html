@@ -147,19 +147,19 @@
                     } else {
                         kinesisVideoArchivedContent.getHLSStreamingSessionURL({
                             StreamName: streamName,
-                            PlaybackMode: $('#playbackMode').val(),
+                            PlaybackMode: "LIVE",
                             HLSFragmentSelector: {
-                                FragmentSelectorType: $('#fragmentSelectorType').val(),
+                                FragmentSelectorType: "SERVER_TIMESTAMP",
                                 /* TimestampRange: $('#playbackMode').val() === "LIVE" ? undefined : {
                                     StartTimestamp: new Date($('#startTimestamp').val()),
                                     EndTimestamp: new Date($('#endTimestamp').val())
                                 } */
                             },
-                            ContainerFormat: $('#containerFormat').val(),
-                            DiscontinuityMode: $('#discontinuityMode').val(),
-                            DisplayFragmentTimestamp: $('#displayFragmentTimestamp').val(),
-                            MaxMediaPlaylistFragmentResults: parseInt($('#maxResults').val()),
-                            Expires: parseInt($('#expires').val())
+                            ContainerFormat: "FRAGMENTED_MP4",
+                            DiscontinuityMode: "ALWAYS",
+                            DisplayFragmentTimestamp: "NEVER",
+                            MaxMediaPlaylistFragmentResults: parseInt("1000"),
+                            Expires: parseInt("3600")
                         }, function(err, response) {
                             if (err) { return console.error(err); }
                             console.log('HLS Streaming Session URL: ' + response.HLSStreamingSessionURL);
