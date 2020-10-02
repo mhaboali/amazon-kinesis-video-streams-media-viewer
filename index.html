@@ -32,11 +32,7 @@
             <div class="row loader"></div>
             <div class="main">
                 <div class="row">
-                    <div class="col-md-4">                                                
-                        <div class="form-group">
-                            <label>Expires (seconds)</label>
-                            <input id="expires" type="text" class="form-control form-control-sm"/>
-                        </div>
+                    <div class="col-md-4">                                                                        
                         <button id="start" type="submit" class="btn btn-primary">Start Playback</button>
                     </div>
                     <div class="col-md-8">
@@ -117,7 +113,7 @@
                             DisplayFragmentTimestamp: $('#displayFragmentTimestamp').val(),
                             DisplayFragmentNumber: $('#displayFragmentNumber').val(),
                             MaxManifestFragmentResults: parseInt($('#maxResults').val()),
-                            Expires: parseInt($('#expires').val())
+                            Expires: parseInt("3600")
                         }, function(err, response) {
                             if (err) { return console.error(err); }
                             console.log('DASH Streaming Session URL: ' + response.DASHStreamingSessionURL);
