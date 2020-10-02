@@ -112,7 +112,7 @@
                             },
                             DisplayFragmentTimestamp: $('#displayFragmentTimestamp').val(),
                             DisplayFragmentNumber: $('#displayFragmentNumber').val(),
-                            MaxManifestFragmentResults: parseInt($('#maxResults').val()),
+                            MaxManifestFragmentResults: parseInt("1000"),
                             Expires: parseInt($('#expires').val())
                         }, function(err, response) {
                             if (err) { return console.error(err); }
