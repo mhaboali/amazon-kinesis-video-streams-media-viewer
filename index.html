@@ -105,15 +105,15 @@
                             PlaybackMode: $('#playbackMode').val(),
                             DASHFragmentSelector: {
                                 FragmentSelectorType: $('#fragmentSelectorType').val(),
-                                TimestampRange: $('#playbackMode').val() === "LIVE" ? undefined : {
+                                /* TimestampRange: $('#playbackMode').val() === "LIVE" ? undefined : {
                                     StartTimestamp: new Date($('#startTimestamp').val()),
                                     EndTimestamp: new Date($('#endTimestamp').val())
-                                }
+                                } */
                             },
                             DisplayFragmentTimestamp: $('#displayFragmentTimestamp').val(),
                             DisplayFragmentNumber: $('#displayFragmentNumber').val(),
                             MaxManifestFragmentResults: parseInt($('#maxResults').val()),
-                            Expires: parseInt("3600")
+                            Expires: parseInt($('#expires').val())
                         }, function(err, response) {
                             if (err) { return console.error(err); }
                             console.log('DASH Streaming Session URL: ' + response.DASHStreamingSessionURL);
@@ -150,10 +150,10 @@
                             PlaybackMode: $('#playbackMode').val(),
                             HLSFragmentSelector: {
                                 FragmentSelectorType: $('#fragmentSelectorType').val(),
-                                TimestampRange: $('#playbackMode').val() === "LIVE" ? undefined : {
+                                /* TimestampRange: $('#playbackMode').val() === "LIVE" ? undefined : {
                                     StartTimestamp: new Date($('#startTimestamp').val()),
                                     EndTimestamp: new Date($('#endTimestamp').val())
-                                }
+                                } */
                             },
                             ContainerFormat: $('#containerFormat').val(),
                             DiscontinuityMode: $('#discontinuityMode').val(),
